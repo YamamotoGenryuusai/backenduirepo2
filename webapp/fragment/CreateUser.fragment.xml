@@ -1,0 +1,28 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" >
+	<Dialog title="{i18n>createUser}" afterClose="onACDialog">		
+		<content>
+    <form:SimpleForm>	
+        <form:content>
+			<core:Title text="{i18n>userInformation}"/>
+			<Label text="{i18n>username}" required="true"/>
+			<Input value="{model>/Username}" maxlenght="12"/>
+            <Label text="{i18n>name}"/>
+			<Input value="{model>/Name}" maxlenght="40"/>
+            <Label text="{i18n>surname}" />
+			<Input value="{model>/Surname}"/>
+            <Label text="{i18n>birthdate}" />
+            <DatePicker value="{ path:'model>/Birthdate', type:'sap.ui.model.type.Date', formatOptions: { UTC:true } }"/>
+            <Label text="{i18n>mail}" />
+			<Input value="{model>/Mail}" maxlenght="241"/>
+		</form:content>	
+    </form:SimpleForm>	
+		</content>
+        
+	<beginButton>
+	  <Button text="{i18n>save}" type="Emphasized" press="onPressContinue"/>
+    </beginButton>
+    <endButton>
+	  <Button text="{i18n>cancel}" press="onACDialog"/>
+    </endButton>
+	</Dialog>
+</core:FragmentDefinition>
